@@ -1,8 +1,8 @@
 # python-twitch-api
-### A Python Implementation of Twitch's API (v5) [70%]
+### A Python Implementation of Twitch's API (v5)
+[Twitch API v5 Reference](https://dev.twitch.tv/docs/)
 
 ## TODO:
-- Implement Video/User endpoints.
-- Minimize Python Code
+- Minimize Python Code (Helper Functions, Minimize Recurring Code)
 - Parameter Validation
-- Useful Constants
+- Constants
