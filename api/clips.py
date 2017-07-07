@@ -1,6 +1,6 @@
 from api.base import TwitchBase
-from api.decorators import oauth_required
-from api.helper import dict_gen
+from api.other.decorators import oauth_required
+from api.other.helper import dict_gen
 
 
 class Clips(TwitchBase):

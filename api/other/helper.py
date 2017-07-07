@@ -1,8 +1,8 @@
-from api.constants import MAX_OBJECT_LIMIT, VALID_DIRECTIONS, BROADCAST_TYPES, LANGUAGES, SORT_TYPES
-from api.exceptions import TwitchParameterError
+from api.other.constants import MAX_OBJECT_LIMIT, VALID_DIRECTIONS, BROADCAST_TYPES, LANGUAGES, SORT_TYPES
+from api.other.exceptions import TwitchParameterError
 
 
-# DEPRECATED - Need to create a better parameter checker based on specific groups after API is fully implemented
+# TODO: parameter_check should be a little more ambiguous; now needs to handle the generated dictionaries
 def parameter_check(limit=None, direction=None, broadcast_type=None, language=None, sort=None, comments=None):
     if limit:
         if limit > MAX_OBJECT_LIMIT:

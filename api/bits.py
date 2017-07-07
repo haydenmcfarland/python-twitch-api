@@ -1,5 +1,5 @@
 from api.base import TwitchBase
-from api.helper import dict_gen
+from api.other.helper import dict_gen
 
 
 class Bits(TwitchBase):

@@ -1,6 +1,7 @@
-from api.constants import ROOT, ACCEPT
-from api.helper import dict_gen
 import requests
+
+from api.other.constants import ROOT, ACCEPT
+from api.other.helper import dict_gen
 
 
 class TwitchBase:

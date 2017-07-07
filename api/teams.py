@@ -1,6 +1,6 @@
 from api.base import TwitchBase
-from api.constants import DEFAULT_OFFSET
-from api.helper import dict_gen
+from api.other.constants import DEFAULT_OFFSET
+from api.other.helper import dict_gen
 
 
 class Teams(TwitchBase):

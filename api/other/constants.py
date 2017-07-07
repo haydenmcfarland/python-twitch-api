@@ -3,7 +3,7 @@ ROOT = 'https://api.twitch.tv/kraken/'
 ACCEPT = 'application/vnd.twitchtv.v5+json'
 
 # Temporary Client Identifier for Testing
-CID = 'NONE'
+CID = 'N/A'
 
 # Twitch v5 API Constants - (Need to redo and make them relegated to specific groups)
 DIRECTION_ASC = 'asc'

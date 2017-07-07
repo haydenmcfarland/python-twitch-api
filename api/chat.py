@@ -1,4 +1,5 @@
 from api.base import TwitchBase
+from api.other.helper import dict_gen
 
 
 class Chat(TwitchBase):
@@ -7,8 +8,7 @@ class Chat(TwitchBase):
         return self._request('get', request)
 
     def get_emoticons_by_set(self, emotesets=None):
-        params = dict()
-        params['emotesets'] = emotesets
+        params = dict_gen(emotesets=emotesets)
         request = 'chat/emoticon_images'
         return self._request('get', request, params=params)
 

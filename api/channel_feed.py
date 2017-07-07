@@ -1,7 +1,7 @@
 from api.base import TwitchBase
-from api.constants import DEFAULT_VIDEO_LIMIT
-from api.decorators import oauth_required
-from api.helper import dict_gen, parameter_check
+from api.other.constants import DEFAULT_VIDEO_LIMIT
+from api.other.decorators import oauth_required
+from api.other.helper import dict_gen, parameter_check
 
 
 class ChannelFeed(TwitchBase):

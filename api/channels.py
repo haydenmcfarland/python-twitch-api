@@ -1,10 +1,9 @@
 from api.base import TwitchBase
-from api.decorators import oauth_required
-from api.helper import dict_gen, parameter_check
-from api.constants import \
-    DEFAULT_OBJECT_LIMIT, DEFAULT_OFFSET, DIRECTION_DESC, DIRECTION_ASC,\
-    DEFAULT_BROADCAST, DEFAULT_SORT, DEFAULT_VIDEO_LIMIT,\
+from api.other.constants import \
+    DEFAULT_OBJECT_LIMIT, DEFAULT_BROADCAST, DEFAULT_SORT, DEFAULT_VIDEO_LIMIT, \
     DEFAULT_LANGUAGES, CID
+from api.other.decorators import oauth_required
+from api.other.helper import dict_gen, parameter_check
 
 
 class Channel(TwitchBase):
