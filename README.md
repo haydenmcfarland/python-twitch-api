@@ -1,5 +1,5 @@
 # python-twitch-api
-###A Python Implementation of Twitch's API (v5) [WIP]
+### A Python Implementation of Twitch's API (v5) [70%]
 
 ## TODO:
 - Implement Video/User endpoints.
