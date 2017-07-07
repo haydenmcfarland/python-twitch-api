@@ -5,3 +5,10 @@ class TwitchOauthError(Exception):
 class TwitchParameterError(Exception):
     pass
 
+
+class TwitchQueryParameterError(Exception):
+    pass
+
+
+class TwitchBodyParameterError(Exception):
+    pass
