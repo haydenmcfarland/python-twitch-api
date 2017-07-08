@@ -40,6 +40,5 @@ if __name__ == '__main__':
 - Data/Query Parameter Validation
 - Oauth Scope Checking
 - Constants (Supported Languages...)
-- Function docstrings
-- Create Package (Setup.py...)
+- Function docstrings (To help ease of use)
 - Extenstions (Embedded Chat, Video Uploading...)
