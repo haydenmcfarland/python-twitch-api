@@ -5,6 +5,7 @@
 ## Details
 
 - Functional
+- Function parameters are the same as outlined in the Twitch API v5 Reference.
 - Function names are similar to Twitch API v5 Reference
 - All function calls return the JSON objects
 
