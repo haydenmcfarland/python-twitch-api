@@ -1,4 +1,4 @@
-from api.base import TwitchBase
+from twitchpy.v5.base import TwitchBase
 
 
 class Ingests(TwitchBase):

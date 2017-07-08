@@ -1,5 +1,5 @@
-from api.base import TwitchBase
-from api.other.helper import dict_gen
+from twitchpy.other.helper import dict_gen
+from twitchpy.v5.base import TwitchBase
 
 
 class Chat(TwitchBase):

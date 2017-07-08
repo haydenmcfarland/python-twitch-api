@@ -1,7 +1,7 @@
-from api.base import TwitchBase
-from api.other.decorators import oauth_required
-from api.other.helper import dict_gen
-from api.other.constants import *
+from twitchpy.other.constants import *
+from twitchpy.other.decorators import oauth_required
+from twitchpy.other.helper import dict_gen
+from twitchpy.v5.base import TwitchBase
 
 
 class Communities(TwitchBase):
@@ -20,13 +20,13 @@ class Communities(TwitchBase):
         json = dict_gen(summary=summary, description=description, rules=rules, email=email)
         return self._put(request, json=json)
 
-    def get_top_communities(self, limit=10, cursor=None):
+    def get_top_communities(self, limit=None, cursor=None):
         request = 'communities/top'
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)
 
     @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
-    def get_community_banned_users(self, community_id, limit=10, cursor=None):
+    def get_community_banned_users(self, community_id, limit=None, cursor=None):
         request = 'communities/{}/bans'.format(community_id)
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)
@@ -84,7 +84,7 @@ class Communities(TwitchBase):
         return self._post(request, json=json)
 
     @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
-    def get_community_timed_out_users(self, community_id, limit=10, cursor=None):
+    def get_community_timed_out_users(self, community_id, limit=None, cursor=None):
         request = 'communities/{}/timeouts'.format(community_id)
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)

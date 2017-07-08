@@ -1,17 +1,17 @@
-from api.bits import Bits
-from api.channel_feed import ChannelFeed
-from api.channels import Channel
-from api.chat import Chat
-from api.clips import Clips
-from api.collections import Collections
-from api.communities import Communities
-from api.games import Games
-from api.ingests import Ingests
-from api.search import Search
-from api.streams import Streams
-from api.teams import Teams
-from api.users import Users
-from api.videos import Videos
+from twitchpy.v5.bits import Bits
+from twitchpy.v5.channel_feed import ChannelFeed
+from twitchpy.v5.channels import Channel
+from twitchpy.v5.chat import Chat
+from twitchpy.v5.clips import Clips
+from twitchpy.v5.collections import Collections
+from twitchpy.v5.communities import Communities
+from twitchpy.v5.games import Games
+from twitchpy.v5.ingests import Ingests
+from twitchpy.v5.search import Search
+from twitchpy.v5.streams import Streams
+from twitchpy.v5.teams import Teams
+from twitchpy.v5.users import Users
+from twitchpy.v5.videos import Videos
 
 
 class TwitchAPI:

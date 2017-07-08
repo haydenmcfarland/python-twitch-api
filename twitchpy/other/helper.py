@@ -1,5 +1,5 @@
-from api.other.constants import MAX_OBJECT_LIMIT, VALID_DIRECTIONS, BROADCAST_TYPES, LANGUAGES, SORT_TYPES
-from api.other.exceptions import TwitchParameterError
+from twitchpy.other.constants import *
+from twitchpy.other.exceptions import TwitchParameterError
 
 
 # TODO: parameter_check should be a little more ambiguous; now needs to handle the generated dictionaries

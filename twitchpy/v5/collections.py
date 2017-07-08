@@ -1,7 +1,7 @@
-from api.base import TwitchBase
-from api.other.decorators import oauth_required
-from api.other.helper import dict_gen
-from api.other.constants import *
+from twitchpy.other.constants import *
+from twitchpy.other.decorators import oauth_required
+from twitchpy.other.helper import dict_gen
+from twitchpy.v5.base import TwitchBase
 
 
 class Collections(TwitchBase):

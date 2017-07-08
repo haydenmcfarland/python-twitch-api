@@ -1,7 +1,7 @@
-from api.base import TwitchBase
-from api.other.decorators import oauth_required
-from api.other.helper import dict_gen, parameter_check
-from api.other.constants import *
+from twitchpy.other.constants import *
+from twitchpy.other.decorators import oauth_required
+from twitchpy.other.helper import dict_gen, parameter_check
+from twitchpy.v5.base import TwitchBase
 
 
 class Channel(TwitchBase):
@@ -27,7 +27,7 @@ class Channel(TwitchBase):
         request = 'channels/{}/editors'.format(channel_id)
         return self._get(request)
 
-    def get_channel_followers(self, channel_id, limit=DEFAULT_OBJECT_LIMIT, offset=0, cursor=None, direction='desc'):
+    def get_channel_followers(self, channel_id, limit=None, offset=None, cursor=None, direction=None):
 
         parameter_check(limit=limit, direction=direction)
         params = dict_gen(limit=limit, offset=offset, cursor=cursor, direction=direction)
@@ -39,7 +39,7 @@ class Channel(TwitchBase):
         return self._get(request)
 
     @oauth_required(scope=SCOPE_CHANNEL_SUBSCRIPTIONS)
-    def get_channel_subscribers(self, channel_id, limit=DEFAULT_OBJECT_LIMIT, offset=0, direction='asc'):
+    def get_channel_subscribers(self, channel_id, limit=None, offset=None, direction=None):
         parameter_check(limit=limit, direction=direction)
         params = dict_gen(limit=limit, offset=offset, direction=direction)
         request = 'channels/{}/subscriptions'.format(channel_id)
@@ -50,8 +50,7 @@ class Channel(TwitchBase):
         request = 'channels/{}/subscriptions/{}'.format(channel_id, user_id)
         return self._get(request)
 
-    def get_channel_videos(self, channel_id, limit=DEFAULT_VIDEO_LIMIT, offset=0, broadcast_type=DEFAULT_BROADCAST,
-                           language=DEFAULT_LANGUAGES, sort=DEFAULT_SORT):
+    def get_channel_videos(self, channel_id, limit=None, offset=None, broadcast_type=None, language=None, sort=None):
         parameter_check(limit=limit, broadcast_type=broadcast_type, language=language, sort=sort)
         params = dict_gen(limit=limit, offset=offset, broadcast_type=broadcast_type, language=language, sort=sort)
         request = 'channels/{}/videos'.format(channel_id)

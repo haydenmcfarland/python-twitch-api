@@ -1,4 +1,4 @@
-from api.other.exceptions import TwitchOauthError
+from twitchpy.other.exceptions import TwitchOauthError
 
 
 def oauth_required(scope=None):

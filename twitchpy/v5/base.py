@@ -1,6 +1,6 @@
-from api.other.helper import dict_gen
-from api.other.constants import *
 import requests
+from twitchpy.v5.other.constants import *
+from twitchpy.other.helper import dict_gen
 
 
 def return_on_ok(response):

@@ -1,11 +1,11 @@
-from api.base import TwitchBase
-from api.other.decorators import oauth_required
-from api.other.helper import dict_gen, parameter_check
-from api.other.constants import *
+from twitchpy.other.constants import *
+from twitchpy.other.decorators import oauth_required
+from twitchpy.other.helper import dict_gen, parameter_check
+from twitchpy.v5.base import TwitchBase
 
 
 class ChannelFeed(TwitchBase):
-    def get_multiple_feed_posts(self, channel_id, limit=DEFAULT_VIDEO_LIMIT, cursor=None, comments=5):
+    def get_multiple_feed_posts(self, channel_id, limit=None, cursor=None, comments=None):
         parameter_check(limit=limit, comments=comments)
         params = dict_gen(limit=limit, cursor=cursor, comments=comments)
         request = 'feed/{}/posts'.format(channel_id)
@@ -35,7 +35,7 @@ class ChannelFeed(TwitchBase):
         params = dict_gen(emote_id=emote_value)
         return self._delete(request, params=params)
 
-    def get_feed_comments(self, channel_id, post_id, limit=10, cursor=None):
+    def get_feed_comments(self, channel_id, post_id, limit=None, cursor=None):
         parameter_check(limit=limit)
         request = 'feed/{}/posts/{}/comments'.format(channel_id, post_id)
         params = dict_gen(limit=limit, cursor=cursor)

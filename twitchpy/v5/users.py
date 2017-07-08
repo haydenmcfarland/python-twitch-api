@@ -1,7 +1,7 @@
-from api.base import TwitchBase
-from api.other.decorators import oauth_required
-from api.other.helper import dict_gen, parameter_check
-from api.other.constants import *
+from twitchpy.other.constants import *
+from twitchpy.other.decorators import oauth_required
+from twitchpy.other.helper import dict_gen
+from twitchpy.v5.base import TwitchBase
 
 
 class Users(TwitchBase):
@@ -31,7 +31,7 @@ class Users(TwitchBase):
         request = 'users/{}/subscriptions/{}'.format(user_id, channel_id)
         return self._get(request)
 
-    def get_user_follows(self, user_id, limit=25, offset=0, direction='desc', sortby='created_at'):
+    def get_user_follows(self, user_id, limit=None, offset=None, direction=None, sortby=None):
         request = 'users/{}/follows/channels'.format(user_id)
         params = dict_gen(limit=limit, offset=offset, direction=direction, sortby=sortby)
         return self._get(request, params)
@@ -41,7 +41,7 @@ class Users(TwitchBase):
         return self._get(request)
 
     @oauth_required(scope=SCOPE_USER_FOLLOWS_EDIT)
-    def follow_channel(self, user_id, channel_id, notifications=False):
+    def follow_channel(self, user_id, channel_id, notifications=None):
         request = 'users/{}/follows/channels/{}'.format(user_id, channel_id)
         json = dict_gen(notifications=notifications)
         return self._put(request, json=json)
@@ -52,7 +52,7 @@ class Users(TwitchBase):
         return self._delete(request)
 
     @oauth_required(scope=SCOPE_USER_BLOCKS_READ)
-    def get_user_block_list(self, user_id, limit=25, offset=0):
+    def get_user_block_list(self, user_id, limit=None, offset=None):
         request = 'users/{}/blocks'.format(user_id)
         params = dict_gen(limit=limit, offset=offset)
         return self._get(request, params=params)
