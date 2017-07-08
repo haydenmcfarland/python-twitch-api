@@ -24,4 +24,6 @@ if __name__ == '__main__':
 - Minimize Python Code
 - Function Parameter Type Validation
 - Data/Query Parameter Validation
-- Constants
+- Constants (Supported Languages...)
+- Function docstrings
+- Extenstions (Embedded Chat, Video Uploading...)
