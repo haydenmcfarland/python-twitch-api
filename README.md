@@ -8,6 +8,16 @@
 - Function names are similar to Twitch API v5 Reference
 - All function calls return the JSON objects
 
+## Install
+
+#### Install Dependency
+
+```
+$ pip install requests
+```
+
+#### Not setup as a package yet.
+
 ## Usage Example
 
 ```
