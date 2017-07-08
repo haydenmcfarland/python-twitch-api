@@ -14,7 +14,7 @@
 #### Install Dependency
 
 ```
-$ pip install requests
+$ pip install requirements.txt
 ```
 
 #### Install *twitchpy*
