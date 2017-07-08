@@ -14,7 +14,7 @@ class Communities(TwitchBase):
         request = 'communities/{}'.format(community_id)
         return self._get(request)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_EDIT)
+    @oauth_required
     def update_community(self, community_id, summary=None, description=None, rules=None, email=None):
         request = 'communities/{}'.format(community_id)
         json = dict_gen(summary=summary, description=description, rules=rules, email=email)
@@ -25,50 +25,50 @@ class Communities(TwitchBase):
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
+    @oauth_required
     def get_community_banned_users(self, community_id, limit=None, cursor=None):
         request = 'communities/{}/bans'.format(community_id)
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
+    @oauth_required
     def ban_community_user(self, community_id, user_id):
         request = 'communities/{}/bans/{}'.format(community_id, user_id)
         return self._get(request)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
+    @oauth_required
     def un_ban_community_user(self, community_id, user_id):
         request = 'communities/{}/bans/{}'.format(community_id, user_id)
         return self._delete(request)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_EDIT)
+    @oauth_required
     def create_community_avatar(self, community_id, avatar_image):
         request = 'communities/{}/images/avatar'.format(community_id)
         json = dict_gen(avatar_image=avatar_image)
         return self._post(request, json=json)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_EDIT)
+    @oauth_required
     def delete_community_avatar(self, community_id):
         request = 'communities/{}/images/avatar'.format(community_id)
         return self._delete(request)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_EDIT)
+    @oauth_required
     def create_community_cover_image(self, community_id, cover_image):
         request = 'communities/{}/images/cover'.format(community_id)
         json = dict_gen(cover_image=cover_image)
         return self._post(request, json=json)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_EDIT)
+    @oauth_required
     def delete_community_cover_image(self, community_id):
         request = 'communities/{}/images/cover'.format(community_id)
         return self._delete(request)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_EDIT)
+    @oauth_required
     def add_community_moderator(self, community_id, user_id):
         request = 'communities/{}/moderators/{}'.format(community_id, user_id)
         return self._put(request)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_EDIT)
+    @oauth_required
     def delete_community_moderator(self, community_id, user_id):
         request = 'communities/{}/moderators/{}'.format(community_id, user_id)
         return self._delete(request)
@@ -83,19 +83,19 @@ class Communities(TwitchBase):
         json = dict_gen(channel_id=channel_id)
         return self._post(request, json=json)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
+    @oauth_required
     def get_community_timed_out_users(self, community_id, limit=None, cursor=None):
         request = 'communities/{}/timeouts'.format(community_id)
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
+    @oauth_required
     def time_out_community_user(self, community_id, user_id, duration, reason=None):
         request = 'communities/{}/timeouts/{}'.format(community_id, user_id)
         json = dict_gen(duration=duration, reason=reason)
         return self._put(request, json=json)
 
-    @oauth_required(scope=SCOPE_COMMUNITIES_MODERATE)
+    @oauth_required
     def un_time_out_community_user(self, community_id, user_id):
         request = 'communities/{}/timeouts/{}'.format(community_id, user_id)
         return self._delete(request)

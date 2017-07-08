@@ -19,41 +19,41 @@ class Collections(TwitchBase):
         params = dict_gen(limit=limit, cursor=cursor, containing_item=containing_item)
         return self._get(request, params=params)
 
-    @oauth_required(scope=SCOPE_COLLECTIONS_EDIT)
+    @oauth_required
     def create_collection(self, channel_id, title):
         request = 'channels/{}/collections'.format(channel_id)
         json = dict_gen(title=title)
         return self._post(request, json=json)
 
-    @oauth_required(scope=SCOPE_COLLECTIONS_EDIT)
+    @oauth_required
     def create_collection(self, collections_id, title):
         request = 'collections/{}'.format(collections_id)
         json = dict_gen(title=title)
         return self._put(request, json=json)
 
-    @oauth_required(scope=SCOPE_COLLECTIONS_EDIT)
+    @oauth_required
     def create_collection_thumbnail(self, collection_id, item_id):
         request = 'collections/{}/thumbnail'.format(collection_id)
         json = dict_gen(item_id=item_id)
         return self._put(request, json=json)
 
-    @oauth_required(scope=SCOPE_COLLECTIONS_EDIT)
+    @oauth_required
     def delete_collection(self, collection_id):
         request = 'collections/{}'.format(collection_id)
         return self._delete(request)
 
-    @oauth_required(scope=SCOPE_COLLECTIONS_EDIT)
+    @oauth_required
     def add_item_to_collection(self, collection_id, item_id, item_type='video'):
         request = 'collections/{}/items'.format(collection_id)
         json = dict_gen(id=item_id, type=item_type)
         return self._post(request, json=json)
 
-    @oauth_required(scope=SCOPE_COLLECTIONS_EDIT)
+    @oauth_required
     def delete_item_from_collection(self, collection_id, item_id):
         request = 'collections/{}/items/{}'.format(collection_id, item_id)
         return self._delete(request)
 
-    @oauth_required(scope=SCOPE_COLLECTIONS_EDIT)
+    @oauth_required
     def move_collection_item(self, collection_id, item_id, position):
         request = 'collections/{}/items/{}'.format(collection_id, item_id)
         json = dict_gen(position=position)

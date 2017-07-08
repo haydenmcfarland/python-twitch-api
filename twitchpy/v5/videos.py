@@ -16,7 +16,7 @@ class Videos(TwitchBase):
                           language=language, sort=sort)
         return self._get(request, params=params)
 
-    @oauth_required(scope=SCOPE_USER_READ)
+    @oauth_required
     def get_followed_videos(self, limit=None, offset=None, broadcast_type=None, language=None, sort=None):
         request = 'videos/followed'
         params = dict_gen(limit=limit, offset=offset, broadcast_type=broadcast_type, language=language, sort=sort)

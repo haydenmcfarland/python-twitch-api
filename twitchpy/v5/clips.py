@@ -16,7 +16,7 @@ class Clips(TwitchBase):
                           trending=trending)
         return self._get(request, params=params)
 
-    @oauth_required(scope=SCOPE_USER_READ)
+    @oauth_required
     def get_followed_clips(self, limit=None, cursor=None, trending=None):
         request = 'clips/followed'
         params = dict_gen(limit=limit, cursor=cursor, trending=trending)

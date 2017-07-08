@@ -26,7 +26,7 @@ class Streams(TwitchBase):
         params = dict_gen(limit=limit, offset=offset)
         return self._get(request, params=params)
 
-    @oauth_required(scope=SCOPE_USER_READ)
+    @oauth_required
     def get_followed_streams(self, stream_type=None, limit=None, offset=None):
         request = 'streams/followed'
         params = dict_gen(stream_type=stream_type, limit=limit, offset=offset)

@@ -1,5 +1,5 @@
 import requests
-from twitchpy.v5.other.constants import *
+from twitchpy.other.constants import *
 from twitchpy.other.helper import dict_gen
 
 
