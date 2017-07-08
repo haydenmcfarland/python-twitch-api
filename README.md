@@ -1,4 +1,4 @@
-# python-twitch-api [wip]
+# twitchpy [wip]
 ### A Python Implementation of Twitch's API (v5)
 [Twitch API v5 Reference](https://dev.twitch.tv/docs/)
 
@@ -17,19 +17,20 @@
 $ pip install requests
 ```
 
-#### Not setup as a package yet.
+#### Instally TwitchPy
 
-## Usage Example
+```
+$ python setup.py install
 
 ```
 
-from twitch_api import TwitchAPI
+from twitchpy.api import TwitchAPI
 
 if __name__ == '__main__':
-    client_id = '[client_id_here]'
-    oauth_token = '[oauth_token]'
+    client_id = '{client_id}'
+    oauth_token = '{oauth_token}'
     api_caller = TwitchAPI(client_id, oauth_token)
-    print(api_caller.chat.get_all_emoticons())
+    print(api_caller.chat.get_all_emotes())
     
 ```
 ## TODO:
