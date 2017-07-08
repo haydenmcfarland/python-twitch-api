@@ -21,6 +21,7 @@ if __name__ == '__main__':
     
 ```
 ## TODO:
-- Minimize Python Code (Helper Functions, Minimize Recurring Code)
-- Parameter Validation
+- Minimize Python Code
+- Function Parameter Type Validation
+- Data/Query Parameter Validation
 - Constants
