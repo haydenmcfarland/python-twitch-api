@@ -4,6 +4,7 @@
 
 ## Details
 
+- Functional
 - Function names are similar to Twitch API v5 Reference
 - All function calls return the JSON objects described in the API
 
