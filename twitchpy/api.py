@@ -83,7 +83,7 @@ class TwitchAPI:
         return self._games
 
     @property
-    def ingests(self) -> Ingests:
+    def ingests(self):
         if not self._ingests:
             self._ingests = Ingests(self._client_id, self._oauth_token)
         return self._ingests
