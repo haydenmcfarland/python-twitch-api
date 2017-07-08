@@ -38,4 +38,5 @@ if __name__ == '__main__':
 - Oauth Scope Checking
 - Constants (Supported Languages...)
 - Function docstrings
+- Create Package (Setup.py...)
 - Extenstions (Embedded Chat, Video Uploading...)
