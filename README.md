@@ -17,13 +17,15 @@
 $ pip install requests
 ```
 
-#### Instally TwitchPy
+#### Install *twitchpy*
 
 ```
 $ python setup.py install
-
 ```
 
+## Usage
+
+```
 from twitchpy.api import TwitchAPI
 
 if __name__ == '__main__':
