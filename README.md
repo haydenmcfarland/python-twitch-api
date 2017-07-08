@@ -23,6 +23,7 @@ if __name__ == '__main__':
 ## TODO:
 - Minimize Python Code
 - Data/Query Parameter Validation
+- Oauth Scope Checking
 - Constants (Supported Languages...)
 - Function docstrings
 - Extenstions (Embedded Chat, Video Uploading...)
