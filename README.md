@@ -1,4 +1,4 @@
-# python-twitch-api [0.5]
+# python-twitch-api [wip]
 ### A Python Implementation of Twitch's API (v5)
 [Twitch API v5 Reference](https://dev.twitch.tv/docs/)
 
