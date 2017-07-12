@@ -1,4 +1,4 @@
-# twitchpy
+# ![](https://image.ibb.co/iKESza/twitchpy.png)twitchpy 
 ### A Python Implementation of Twitch's API (v5)
 [Twitch API v5 Reference](https://dev.twitch.tv/docs/)
 
