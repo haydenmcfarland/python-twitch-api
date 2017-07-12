@@ -4,9 +4,9 @@
 
 ## Details
 
-- Functional (Python 3)
+- Python 3
 - Function parameters are the same as outlined in the Twitch API v5 Reference.
-- Function names are similar to Twitch API v5 Reference
+- Function names are easily translated from Twitch API v5 Reference
 - All function calls return JSON objects
 
 ## Install
@@ -36,8 +36,6 @@ if __name__ == '__main__':
 ```
 ## TODO:
 - Minimize Python Code
-- Data/Query Parameter Validation
-- Oauth Scope Checking
 - Constants (Supported Languages...)
 - Function docstrings (To help ease of use)
-- Extenstions (Embedded Chat, Video Uploading...)
+- Extenstions (Video Uploading...)
