@@ -18,7 +18,7 @@ class Users(TwitchBase):
     @oauth_required
     def get_users(self, user_id):
         request = 'users'
-        params = dict_gen(user_id=user_id)
+        params = dict_gen(login=user_id)
         return self._get(request, params=params)
 
     @oauth_required
