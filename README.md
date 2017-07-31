@@ -1,4 +1,4 @@
-# ![](https://image.ibb.co/iKESza/twitchpy.png)twitchpy 
+twitchpy 
 ### A Python Implementation of Twitch's API (v5)
 [Twitch API v5 Reference](https://dev.twitch.tv/docs/)
 
@@ -34,6 +34,10 @@ if __name__ == '__main__':
     api_caller = TwitchAPI(client_id, oauth_token)
     print(api_caller.chat.get_all_emoticons())
 ```
+
+## Other:
+- ```outh_token``` should be a string of the form: ```OAuth {{GENERATED_OAUTH_TOKEN}}```
+
 ## TODO:
 - Minimize Python Code
 - Constants (Supported Languages...)
