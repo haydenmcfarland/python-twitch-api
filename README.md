@@ -13,13 +13,13 @@
 #### Install Dependency
 
 ```
-$ pip install requirements.txt
+> pip install requirements.txt
 ```
 
 #### Install *twitchpy*
 
 ```
-$ python setup.py install
+> python setup.py install
 ```
 
 ## Usage
