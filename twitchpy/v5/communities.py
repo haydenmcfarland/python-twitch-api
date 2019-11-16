@@ -15,9 +15,19 @@ class Communities(TwitchBase):
         return self._get(request)
 
     @oauth_required
-    def update_community(self, community_id, summary=None, description=None, rules=None, email=None):
+    def update_community(
+            self,
+            community_id,
+            summary=None,
+            description=None,
+            rules=None,
+            email=None):
         request = 'communities/{}'.format(community_id)
-        json = dict_gen(summary=summary, description=description, rules=rules, email=email)
+        json = dict_gen(
+            summary=summary,
+            description=description,
+            rules=rules,
+            email=email)
         return self._put(request, json=json)
 
     def get_top_communities(self, limit=None, cursor=None):
@@ -26,7 +36,11 @@ class Communities(TwitchBase):
         return self._get(request, params=params)
 
     @oauth_required
-    def get_community_banned_users(self, community_id, limit=None, cursor=None):
+    def get_community_banned_users(
+            self,
+            community_id,
+            limit=None,
+            cursor=None):
         request = 'communities/{}/bans'.format(community_id)
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)
@@ -84,13 +98,19 @@ class Communities(TwitchBase):
         return self._post(request, json=json)
 
     @oauth_required
-    def get_community_timed_out_users(self, community_id, limit=None, cursor=None):
+    def get_community_timed_out_users(
+            self, community_id, limit=None, cursor=None):
         request = 'communities/{}/timeouts'.format(community_id)
         params = dict_gen(limit=limit, cursor=cursor)
         return self._get(request, params=params)
 
     @oauth_required
-    def time_out_community_user(self, community_id, user_id, duration, reason=None):
+    def time_out_community_user(
+            self,
+            community_id,
+            user_id,
+            duration,
+            reason=None):
         request = 'communities/{}/timeouts/{}'.format(community_id, user_id)
         json = dict_gen(duration=duration, reason=reason)
         return self._put(request, json=json)

@@ -14,9 +14,17 @@ class Collections(TwitchBase):
         params = dict_gen(include_all_items=include_all_items)
         return self._get(request, params=params)
 
-    def get_collection_by_channel(self, channel_id, limit=10, cursor=None, containing_item=None):
+    def get_collection_by_channel(
+            self,
+            channel_id,
+            limit=10,
+            cursor=None,
+            containing_item=None):
         request = 'channels/{}/collections'.format(channel_id)
-        params = dict_gen(limit=limit, cursor=cursor, containing_item=containing_item)
+        params = dict_gen(
+            limit=limit,
+            cursor=cursor,
+            containing_item=containing_item)
         return self._get(request, params=params)
 
     @oauth_required
@@ -43,7 +51,11 @@ class Collections(TwitchBase):
         return self._delete(request)
 
     @oauth_required
-    def add_item_to_collection(self, collection_id, item_id, item_type='video'):
+    def add_item_to_collection(
+            self,
+            collection_id,
+            item_id,
+            item_type='video'):
         request = 'collections/{}/items'.format(collection_id)
         json = dict_gen(id=item_id, type=item_type)
         return self._post(request, json=json)

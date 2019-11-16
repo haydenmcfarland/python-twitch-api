@@ -31,9 +31,19 @@ class Users(TwitchBase):
         request = 'users/{}/subscriptions/{}'.format(user_id, channel_id)
         return self._get(request)
 
-    def get_user_follows(self, user_id, limit=None, offset=None, direction=None, sortby=None):
+    def get_user_follows(
+            self,
+            user_id,
+            limit=None,
+            offset=None,
+            direction=None,
+            sortby=None):
         request = 'users/{}/follows/channels'.format(user_id)
-        params = dict_gen(limit=limit, offset=offset, direction=direction, sortby=sortby)
+        params = dict_gen(
+            limit=limit,
+            offset=offset,
+            direction=direction,
+            sortby=sortby)
         return self._get(request, params)
 
     def user_follows_by_channel(self, user_id, channel_id):

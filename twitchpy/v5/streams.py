@@ -10,10 +10,22 @@ class Streams(TwitchBase):
         params = dict_gen(stream_type=stream_type)
         return self._get(request, params=params)
 
-    def get_live_streams(self, channel=None, game=None, language=None, stream_type=None, limit=None, offset=None):
+    def get_live_streams(
+            self,
+            channel=None,
+            game=None,
+            language=None,
+            stream_type=None,
+            limit=None,
+            offset=None):
         request = 'streams/'
-        params = dict_gen(channel=channel, game=game,
-                          language=language, stream_type=stream_type, limit=limit, offset=offset)
+        params = dict_gen(
+            channel=channel,
+            game=game,
+            language=language,
+            stream_type=stream_type,
+            limit=limit,
+            offset=offset)
         return self._get(request, params=params)
 
     def get_streams_summary(self, game=None):

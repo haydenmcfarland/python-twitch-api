@@ -9,7 +9,15 @@ class Clips(TwitchBase):
         request = 'clips/{}'.format(slug)
         return self._get(request)
 
-    def get_top_clips(self, channel=None, cursor=None, game=None, language=None, limit=None, period=None, trending=None):
+    def get_top_clips(
+            self,
+            channel=None,
+            cursor=None,
+            game=None,
+            language=None,
+            limit=None,
+            period=None,
+            trending=None):
         request = 'clips/top'
         params = dict_gen(channel=channel, cursor=cursor, game=game,
                           language=language, limit=limit, period=period,

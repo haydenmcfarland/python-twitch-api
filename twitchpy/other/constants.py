@@ -52,4 +52,3 @@ SCOPE_USER_BLOCKS_EDIT = 'user_blocks_edit'
 
 # SCOPE VHS
 SCOPE_VIEWING_ACTIVITY_READ = 'viewing_activity_read'
-

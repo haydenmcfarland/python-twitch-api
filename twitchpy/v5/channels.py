@@ -16,8 +16,15 @@ class Channel(TwitchBase):
         self._get(request)
 
     @oauth_required
-    def update_channel(self, channel_id, status=None, game=None, delay=None, channel_feed_enabled=None):
-        json = dict_gen(status=status, game=game, delay=delay, channel_feed_enabled=channel_feed_enabled)
+    def update_channel(
+            self,
+            channel_id,
+            status=None,
+            game=None,
+            delay=None,
+            channel_feed_enabled=None):
+        json = dict_gen(status=status, game=game, delay=delay,
+                        channel_feed_enabled=channel_feed_enabled)
         channel_json = dict_gen(channel=json)
         request = 'channels/{}'.format(channel_id)
         return self._put(request, json=channel_json)
@@ -27,10 +34,20 @@ class Channel(TwitchBase):
         request = 'channels/{}/editors'.format(channel_id)
         return self._get(request)
 
-    def get_channel_followers(self, channel_id, limit=None, offset=None, cursor=None, direction=None):
+    def get_channel_followers(
+            self,
+            channel_id,
+            limit=None,
+            offset=None,
+            cursor=None,
+            direction=None):
 
         parameter_check(limit=limit, direction=direction)
-        params = dict_gen(limit=limit, offset=offset, cursor=cursor, direction=direction)
+        params = dict_gen(
+            limit=limit,
+            offset=offset,
+            cursor=cursor,
+            direction=direction)
         request = 'channels/{}/follows'.format(channel_id)
         return self._get(request, params=params)
 
@@ -39,7 +56,12 @@ class Channel(TwitchBase):
         return self._get(request)
 
     @oauth_required
-    def get_channel_subscribers(self, channel_id, limit=None, offset=None, direction=None):
+    def get_channel_subscribers(
+            self,
+            channel_id,
+            limit=None,
+            offset=None,
+            direction=None):
         parameter_check(limit=limit, direction=direction)
         params = dict_gen(limit=limit, offset=offset, direction=direction)
         request = 'channels/{}/subscriptions'.format(channel_id)
@@ -50,9 +72,25 @@ class Channel(TwitchBase):
         request = 'channels/{}/subscriptions/{}'.format(channel_id, user_id)
         return self._get(request)
 
-    def get_channel_videos(self, channel_id, limit=None, offset=None, broadcast_type=None, language=None, sort=None):
-        parameter_check(limit=limit, broadcast_type=broadcast_type, language=language, sort=sort)
-        params = dict_gen(limit=limit, offset=offset, broadcast_type=broadcast_type, language=language, sort=sort)
+    def get_channel_videos(
+            self,
+            channel_id,
+            limit=None,
+            offset=None,
+            broadcast_type=None,
+            language=None,
+            sort=None):
+        parameter_check(
+            limit=limit,
+            broadcast_type=broadcast_type,
+            language=language,
+            sort=sort)
+        params = dict_gen(
+            limit=limit,
+            offset=offset,
+            broadcast_type=broadcast_type,
+            language=language,
+            sort=sort)
         request = 'channels/{}/videos'.format(channel_id)
         return self._get(request, params=params)
 

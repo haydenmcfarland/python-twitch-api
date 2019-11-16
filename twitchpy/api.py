@@ -43,7 +43,8 @@ class TwitchAPI:
     @property
     def channel_feed(self):
         if not self._channel_feed:
-            self._channel_feed = ChannelFeed(self._client_id, self._oauth_token)
+            self._channel_feed = ChannelFeed(
+                self._client_id, self._oauth_token)
         return self._channel_feed
 
     @property
