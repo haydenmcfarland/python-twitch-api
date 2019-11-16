@@ -29,9 +29,3 @@ if __name__ == '__main__':
 
 ## Other:
 - ```outh_token``` should be a string of the form: ```OAuth {{GENERATED_OAUTH_TOKEN}}```
-
-## TODO:
-- Minimize Python Code
-- Constants (Supported Languages...)
-- Function docstrings (To help ease of use)
-- Extenstions (Video Uploading...)
