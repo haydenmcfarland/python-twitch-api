@@ -1,12 +1,5 @@
-### twitchpy: A Python Implementation of Twitch's API (v5)
+### twitchpy: A Python Implementation of Twitch's API (v5) (NOT MAINTAINED)
 [Twitch API v5 Reference](https://dev.twitch.tv/docs/)
-
-## Details
-
-- Python 3
-- Function parameters are the same as outlined in the Twitch API v5 Reference.
-- Function names are easily translated from Twitch API v5 Reference
-- All function calls return JSON objects
 
 ## Install
 
@@ -36,9 +29,3 @@ if __name__ == '__main__':
 
 ## Other:
 - ```outh_token``` should be a string of the form: ```OAuth {{GENERATED_OAUTH_TOKEN}}```
-
-## TODO:
-- Minimize Python Code
-- Constants (Supported Languages...)
-- Function docstrings (To help ease of use)
-- Extenstions (Video Uploading...)
